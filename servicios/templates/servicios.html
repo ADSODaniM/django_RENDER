@@ -1,0 +1,30 @@
+<!-- servicios/templates/servicios.html -->
+
+{% extends 'base.html' %}
+{% block title %}Lista de Servicios{% endblock %}
+
+{% block header %}
+    <h2>Lista de Servicios</h2>
+
+{% endblock %}
+
+{% block content %}
+    <div class="lista-servicios">
+        {% for servicio in servicios %}
+            
+            <div class="tarjeta-servicio">
+                {% if servicio.imagen %}
+                <img src="{{ servicio.imagen.url }}" alt="{{ servicio.nombre_servicio }}">
+                {% endif %}
+                <h2>{{ servicio.nombre_servicio }}</h2>
+                <p>{{ servicio.descripcion|truncatechars:100 }}...</p>
+                <p class="precio">${{ servicio.precio }}</p>
+                <div class="grupo-botones">
+                
+                    <a href="{% url 'detalle' servicio.id %}"><button class="boton">Detalles</button></a>
+                </div>
+            </div>
+            
+        {% endfor %}
+    </div>
+{% endblock %}

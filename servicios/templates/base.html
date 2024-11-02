@@ -1,0 +1,41 @@
+<!-- servicios/templates/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        Sistema de Asignación de Citas
+        {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        {% block header %}
+        {% endblock %}
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="#">Quienes Somos</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+        <form method="GET">
+            <select name="tipo_servicio">
+                <option value="">Todos</option>
+                <option value="manicura">Manicura</option>
+                <option value="pedicura">Pedicura</option>
+            </select>
+            <input type="submit" value="Buscar">
+        </form>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

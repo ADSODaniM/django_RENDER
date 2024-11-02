@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E6E6FA;
+    color: #333;
+}
+
+header {
+    background-color: #ec6aab; 
+    color: #333;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav {
+    background-color: #e2dede;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #000;
+    background-color: #e88bba;
+    border-radius: 5px;
+}
+
+nav .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+nav .search-bar input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+article {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+article p {
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+aside {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas de Servicio */
+.tarjeta-servicio {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Ajuste para tres tarjetas por fila con gap */
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-servicio img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-servicio h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tarjeta-servicio .precio {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.tarjeta-servicio p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas */
+    -webkit-box-orient: vertical;
+}
+
+.grupo-botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Añade un espacio entre los botones */
+    margin-top: 10px; /* Añade un margen superior para separar los botones del contenido anterior */
+}
+
+.boton {
+    text-decoration: none;
+    padding: 10px 15px; /* Ajuste del padding para un mejor espaciado */
+    border: none;
+    border-radius: 5px;
+    background-color: #e88bba;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    flex: 1; /* Asegura que todos los botones tengan el mismo ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+}
+
+.boton:hover {
+    background-color: #ec6aab;
+    transform: scale(1.05);
+}
+
+form .boton {
+    flex: 1; /* Asegura que el botón dentro del formulario tenga el mismo ancho que los otros botones */
+}
+
+/* Detalle de la Cita */
+.detalle-servicio {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.contenedor-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.contenedor-imagen h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.contenedor-imagen .precio {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+.info-servicio {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos de texto */
+    max-height: 450px; /* Altura máxima para la descripción */
+    overflow-y: auto; /* Scroll si hay mucho texto */
+    padding-right: 20px; /* Espacio para el scroll */
+    margin-top: 40px;
+}
+
+.info-servicio .descripcion {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: justify;
+}
+
+.grupo-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.boton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e88bba;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: #ec6aab;
+    transform: scale(1.05);
+}
+
+
+/* Asegúrate de agregar esto */
+.lista-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.tarjeta-servicio {
+    width: calc(33.333% - 40px); /* Ajuste para tres tarjetas por fila con gap */
+}
+
+/* Elimina o modifica el main existente si es necesario */
+main {
+    display: flex;
+    flex-direction: column; /* Cambio de justify-content: space-between a flex-direction: column */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}

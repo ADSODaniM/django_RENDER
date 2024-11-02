@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ servicio.nombre }}{% endblock %}
+
+{% block header %}
+    <h2>{{ servicio.nombre }}</h2>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% if servicio.imagen_servicio %}
+        <img src="{{ servicio.imagen_servicio.url }}" alt="{{ servicio.tipo_servicio }}">
+        {% endif %}
+        <p>{{ servicio.descripcion }}</p>
+        <p>${{ servicio.precio }}</p>
+        
+        <ul>
+            <li><strong>Nombre del servicio:</strong> {{ servicio.nombre_servicio }}</li>
+            <li><strong>Tipo de servicio:</strong> {{ servicio.tipo_servicio }}</li>
+	        <li><strong>Descripción del servicio:</strong> {{ servicio.descripcion_servicio }}</li>
+            <li><strong>Duración:</strong> {{ servicio.duracion }} Minutos</li>
+            <li><strong>Procedimiento:</strong> {{ servicio.procedimiento }}</li>
+	    <ol>
+    	    <li>{{ servicio.procedimiento.paso_1 }}</li>
+    	    <li>{{ servicio.procedimiento.paso_2 }}</li>
+    	    <li>{{ servicio.procedimiento.paso_3 }}</li>
+    	    <!-- Agregar más pasos según sea necesario -->
+    	</ol>
+            <li><strong>Profesional asignado:</strong> {{ servicio.profesional_asignado }}</li>
+            <li><strong>Disponibilidad:</strong> {{ servicio.disponibilidad }}</li>
+            <li><strong>Recomendaciones:</strong> {{ servicio.recomedaciones }}</li>
+	        <li><strong>Contraindicaciones:</strong> {{ servicio.contraindicaciones }}</li>
+            <li><strong>Política de cancelación:</strong> {{ servicio.politica_cancelacion }}</li>
+        </ul>
+        
+        <button class="boton">Agendar Cita</button>
+        <a href="{% url 'servicios' %}"><button class="boton">Volver</button></a>
+    </div>
+{% endblock %}
